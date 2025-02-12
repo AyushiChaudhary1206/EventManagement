@@ -19,7 +19,7 @@ fetch();
  const fetch=()=> {
     setLoading(true); // Start loading before request
     axios
-      .get("http://localhost:3001/api/v1/getevents")
+      .get("https://eventmanagementbackend-hlij.onrender.com/api/v1/getevents")
       .then((response) => {
         setEvents(response.data.events);
         
@@ -39,7 +39,7 @@ fetch();
   // Fetch Attendees
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/v1/getatendee")
+      .get("https://eventmanagementbackend-hlij.onrender.com/api/v1/getatendee")
       .then((response) => {
         setAttendee(response.data.atendees);
       })
@@ -54,7 +54,7 @@ fetch();
 
     setLoading(true); // Start loading before filtering
     axios
-      .post("http://localhost:3001/api/v1/filterevents", {
+      .post("https://eventmanagementbackend-hlij.onrender.com/api/v1/filterevents", {
         date: eventDate,
       })
       .then((response) => {
