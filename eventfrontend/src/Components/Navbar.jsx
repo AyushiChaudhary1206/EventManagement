@@ -27,7 +27,7 @@ const Navbar= ({attendees,handleEventAdded}) => {
   // Handle form submission
   const handleAddEvent = async(e) => {
     e.preventDefault();
-   await axios.post("http://localhost:3001/api/v1/events",{
+   await axios.post("https://eventmanagementbackend-hlij.onrender.com/api/v1/events",{
     title:eventTitle,
     time:eventTime,
     description:eventDescription,
