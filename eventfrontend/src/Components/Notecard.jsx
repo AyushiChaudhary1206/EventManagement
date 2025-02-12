@@ -17,7 +17,7 @@ const EventCard = ({ event,handleEventAdded }) => {
   const handleRegister = async () => {
     try {
       // Send POST request using Axios
-      await axios.post('http://localhost:3001/api/v1/atendee', {
+      await axios.post('https://eventmanagementbackend-hlij.onrender.com/api/v1/atendee', {
         name,
         email,
         phone,
