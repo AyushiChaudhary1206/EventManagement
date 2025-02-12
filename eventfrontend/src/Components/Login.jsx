@@ -10,7 +10,7 @@ const Login = () => {
  const handleSubmit=async(e)=>{
   e.preventDefault();
   try {
-     const res=await axios.post("http://localhost:3001/api/v1/login", {
+     const res=await axios.post("https://eventmanagementbackend-hlij.onrender.com/api/v1/login", {
       email,
       password,
     },{
