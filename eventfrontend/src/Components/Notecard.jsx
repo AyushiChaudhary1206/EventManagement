@@ -189,6 +189,7 @@ const EventCard = ({ event,handleEventAdded }) => {
           Close
         </button>
       </Modal>
+      <ToastContainer/>
     </div>
   );
 };
