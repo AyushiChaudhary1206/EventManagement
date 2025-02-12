@@ -15,7 +15,7 @@ const Guestmode = () => {
          const fetch=()=> {
             setLoading(true); // Start loading before request
             axios
-              .get("http://localhost:3001/api/v1/getevents")
+              .get("https://eventmanagementbackend-hlij.onrender.com/api/v1/getevents")
               .then((response) => {
                 console.log(response.data.events);
                 setEvents(response.data.events);
