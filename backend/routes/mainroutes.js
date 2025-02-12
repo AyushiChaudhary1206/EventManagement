@@ -3,9 +3,10 @@ const app=express();
 const router=express.Router();
 const zod = require("zod");
 const jwt = require("jsonwebtoken");
-const { User, Notes, Event, Atendee } = require("../db");
-const {JWT_SECRET}=require('../config');
-const { authmiddleware } = require("../middleware");
+const { User,Event, Atendee } = require("../db");
+
+require ("dotenv").config();
+
 
 const schema = zod.object({
     name:zod.string(),
@@ -38,7 +39,7 @@ router.post("/signup",async(req,res)=>{
  
   const token=jwt.sign(
     {userid},
-    JWT_SECRET
+    process.env.JWT_SECRET
   );
  
   res.json({
@@ -68,7 +69,7 @@ router.post("/login",async(req,res)=>{
 
  if(user){
   const id=user._id.toString();
-  const token=jwt.sign({id},JWT_SECRET);
+  const token=jwt.sign({id},process.env.JWT_SECRET);
   res.json({token:token})
 
 
